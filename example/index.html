@@ -1,0 +1,29 @@
+<html ng-app="app">
+<head>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" media="screen"/>
+
+    <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/select2/3.4.4/select2.min.js"></script>
+    <script src="../src/simplerating.js"></script>
+
+    <script>
+        var app = angular.module('app', ['SimpleRating']);
+        app.controller('Tester', function ($scope) {
+            $scope.ratingValue = 2;
+            $scope.max = 5;
+
+            $scope.readonly = false;
+        });
+    </script>
+</head>
+<body ng-controller="Tester">
+<div class="container">
+    <label for="readonly-cb">Read Only</label>
+    <input type="checkbox" id="readonly-cb" ng-model="readonly" style="margin-bottom: 10px"/>
+
+    <div simple-rating rating="ratingValue" rating-max="max" read-only="readonly"></div>
+</div>
+</body>
+</html>
