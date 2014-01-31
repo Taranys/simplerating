@@ -1,3 +1,6 @@
+/**
+ * https://github.com/Taranys/simplerating
+ */
 angular.module('SimpleRating', [])
     .directive('simpleRating', function () {
         return {
