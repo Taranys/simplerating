@@ -6,7 +6,7 @@ angular.module('SimpleRating', [])
         return {
             restrict: 'A',
             template: '<ul style="padding: 0">' +
-                '<li ng-repeat="star in stars" style="color: #FFD700; cursor: pointer" class="glyphicon" ng-class="getStarClass($index)" ng-click="click($index)"></li>' +
+                '<li ng-repeat="star in stars" style="color: #FFD700" ng-style="getCursor()" class="glyphicon" ng-class="getStarClass($index)" ng-click="click($index)"></li>' +
                 '</ul>',
             scope: {
                 rating: "=",
@@ -16,6 +16,10 @@ angular.module('SimpleRating', [])
             link: function ($scope) {
                 $scope.getStarClass = function (index) {
                     return ($scope.rating >= index) ? 'glyphicon-star' : 'glyphicon-star-empty';
+                };
+
+                $scope.getCursor = function() {
+                    return { cursor : ($scope.readOnly?'not-allowed':'pointer') };
                 };
 
                 $scope.$watch('rating', function () {
