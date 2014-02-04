@@ -29,7 +29,7 @@ An example is available on "example" directory
 ```
 
 Parameters :
-* rating : base64 value of the picture
-* rating-max : size of the image (on load, image will be resize to this width to avoid memory overload)
-* read-only : on image load, this value is set with the detected value.
+* rating : the rate value
+* rating-max : the number max of star
+* read-only : true to avoid modification, otherwise false to allow
 
